@@ -12,9 +12,9 @@ class AppUsage2VecDataset(Dataset):
     
     def __init__(self, mode):
         if mode == 'train':
-            self.df = pd.read_csv('/mnt/data/train.txt', sep='\t')
+            self.df = pd.read_csv('data/train.txt', sep='\t')
         else:
-            self.df = pd.read_csv('/mnt/data/test.txt', sep='\t')
+            self.df = pd.read_csv('data/test.txt', sep='\t')
         
         self.df['app_seq'] = self.df['app_seq'].apply(ast.literal_eval)
         self.df['time_seq'] = self.df['time_seq'].apply(ast.literal_eval)
